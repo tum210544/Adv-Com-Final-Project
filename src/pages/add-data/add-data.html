@@ -1,0 +1,64 @@
+<!--
+  Generated template for the AddDataPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Add Data
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-item>
+    <ion-label position="stacked">Title:</ion-label>
+    <ion-input placeholder="Title" [(ngModel)]="title"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">Genre</ion-label>
+  </ion-item>
+  <ion-list radio-group [(ngModel)]="genre">
+    <ion-item>
+      <ion-label>Movie</ion-label>
+      <ion-radio value="Movie" checked></ion-radio>
+    </ion-item>
+    <ion-item>
+      <ion-label>TV Show</ion-label>
+      <ion-radio value="TV Show"></ion-radio>
+    </ion-item>
+  </ion-list>
+  <ion-item>
+    <ion-label position="stacked">Listed_in:</ion-label>
+    <ion-input placeholder="Ex: Comedy" [(ngModel)]="listed_in"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="stacked">Director</ion-label>
+    <ion-input placeholder="name" [(ngModel)]="director"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="stacked">Country</ion-label>
+    <ion-input placeholder="country" [(ngModel)]="country"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="stacked">Date_added</ion-label>
+    <ion-input placeholder="9-Sep-19" [(ngModel)]="date_added"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="stacked">Release_year</ion-label>
+    <ion-input placeholder="Ex: 2019" [(ngModel)]="release_year"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="stacked">Duration</ion-label>
+    <ion-input placeholder="Ex: 90" [(ngModel)]="duration"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="stacked">Description</ion-label>
+    <ion-input placeholder="description" [(ngModel)]="description"></ion-input>
+  </ion-item>
+  <button ion-button (click)="addMovie(title,genre,listed_in,director,country,date_added,release_year,duration,description)" full>Add</button>
+  <button ion-button (click)="onCancel()" full>Cancel</button>
+</ion-content>

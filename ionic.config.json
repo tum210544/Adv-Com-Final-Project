@@ -1,0 +1,7 @@
+{
+  "name": "AdvComFinalProject",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "ionic-angular"
+}

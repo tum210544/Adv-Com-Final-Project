@@ -1,0 +1,52 @@
+<!--
+  Generated template for the RawDataPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-title>Raw Data</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-item>
+    <ion-label position="stacked">Title</ion-label>
+    <ion-input placeholder="Enter movie's title" [(ngModel)]="title"></ion-input>
+  </ion-item>
+  <ion-list radio-group [(ngModel)]="genre">
+    <p>Genre</p>
+    <ion-item>
+      <ion-label>Movie</ion-label>
+      <ion-radio value="Movie"></ion-radio>
+    </ion-item>
+    <ion-item>
+      <ion-label>TV Show</ion-label>
+      <ion-radio value="TV Show"></ion-radio>
+    </ion-item>
+    <ion-item>
+      <ion-label>None</ion-label>
+      <ion-radio value=""></ion-radio>
+    </ion-item>
+  </ion-list>
+
+  <button ion-button (click)="onSearch()" full>Search</button>
+  <ion-list>
+    <ion-item *ngFor="let item of itemListData">
+      <ion-card (click)="getDetail(item)">
+        <h2>Title: {{item.title}}</h2>
+        <p>Genre: {{item.genre}}</p>
+        <p>Listed_In: {{item.listed_in}}</p>
+        <p>Country: {{item.country}}</p>
+        <p *ngIf="item.genre == 'Movie'">Duration: {{item.duration}} min</p>
+        <p *ngIf="item.genre == 'TV Show'">Duration: {{item.duration}} season</p>
+      </ion-card>
+    </ion-item>
+  </ion-list>
+
+  <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+    <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Loading">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>
