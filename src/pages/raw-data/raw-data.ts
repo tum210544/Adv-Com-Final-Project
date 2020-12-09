@@ -27,7 +27,7 @@ export class RawDataPage {
       cssClass: 'my-custom-class',
       message: 'Title: '+ item.title+'<br/>'
       +'Genre: '+item.genre+'<br/>'
-      +'Listed in: '+item.listedin+'<br/>'
+      +'Listed in: '+item.listed_in+'<br/>'
       +'Country: '+item.country+'<br/>'
       +'Duration: '+item.duration+" "+this.unit+'<br/>'
       +'Director: '+item.director+'<br/>'

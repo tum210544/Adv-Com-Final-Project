@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
+
 /**
  * Generated class for the VisualizationPage page.
  *
@@ -14,7 +15,6 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'visualization.html',
 })
 export class VisualizationPage {
-
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 

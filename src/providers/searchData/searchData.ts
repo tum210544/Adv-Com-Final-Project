@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import config from '../../config/keys';
 
 /*
   Generated class for the ScoreProvider provider.
@@ -14,11 +15,10 @@ export class SearchDataProvider {
       }
     
       last = 0;
-
       getFirstData(itemList, id, event,title,genre) {
         this.last=0;
         console.log("I'll get the data")
-        this.http.get('http://02555f7d258b.ngrok.io/findByFilter?id=' + this.last + '&title='+ title+'&genre='+genre).subscribe((data: any) => {
+        this.http.get(config.URL+'/findByFilter?id=' + this.last + '&title='+ title+'&genre='+genre).subscribe((data: any) => {
           for (let i = 0; i < data.length; i++) {
             itemList.push(data[i]);
             this.last = data[data.length-1]['id']
@@ -31,7 +31,7 @@ export class SearchDataProvider {
     
       getData(itemList, id, event,title,genre) {
         console.log("I'll get the data")
-        this.http.get('http://02555f7d258b.ngrok.io/findByFilter?id=' + this.last + '&title='+ title+'&genre='+genre).subscribe((data: any) => {
+        this.http.get(config.URL+'/findByFilter?id=' + this.last + '&title='+ title+'&genre='+genre).subscribe((data: any) => {
           for (let i = 0; i < data.length; i++) {
             itemList.push(data[i]);
             this.last = data[data.length-1]['id']
